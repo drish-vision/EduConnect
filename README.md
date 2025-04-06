@@ -11,7 +11,6 @@ EduConnect is an interactive platform that bridges the gap between students and 
 - [Installation Instructions](#installation-instructions)
 - [Usage](#usage)
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [License](#license)
 
