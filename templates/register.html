@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - EduConnect</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_register.css') }}">
+  <script>
+    function toggleFields() {
+      const role = document.getElementById("role").value;
+      const studentFields = document.getElementById("student-fields");
+      const teacherFields = document.getElementById("teacher-fields");
+
+      studentFields.style.display = (role === "student") ? "block" : "none";
+      teacherFields.style.display = (role === "teacher") ? "block" : "none";
+    }
+    window.onload = toggleFields;
+  </script>
+</head>
+<body>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <div class="register-container">
+    <h2>Register for EduConnect</h2>
+    <form action="{{ url_for('register') }}" method="POST">
+      
+      <label for="role">Register As:</label>
+      <select name="role" id="role" onchange="toggleFields()" required>
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+      </select>
+
+      <label for="name">Full Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required>
+
+      <!-- Student Fields -->
+      <div id="student-fields">
+        <label for="class">Class:</label>
+        <select name="class" id="class">
+          {% for i in range(1, 11) %}
+            <option value="{{ i }}">{{ i }}</option>
+          {% endfor %}
+        </select>
+
+        <label for="area">Area:</label>
+        <select name="area" id="area">
+          <option value="urban">Urban</option>
+          <option value="rural">Rural</option>
+          <option value="unreserved">Unreserved</option>
+        </select>
+      </div>
+
+<!-- Teacher Fields -->
+<div id="teacher-fields" style="display: none;">
+    <div class="form-group">
+      <label for="department">Department:</label>
+      <select name="department" id="department" required>
+        <option value="English">English</option>
+        <option value="Maths">Maths</option>
+        <option value="Science">Science</option>
+        <option value="Biology">Biology</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Physics">Physics</option>
+        <option value="Social Studies">Social Studies</option>
+        <option value="Social Skills">Social Skills</option>
+        <option value="Online Education Tips">Online Education Tips</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="experience">Experience:</label>
+      <select name="experience" id="experience" required>
+        <option value="Beginner">Beginner</option>
+        <option value="2+ years">2+ years</option>
+        <option value="5+ years">5+ years</option>
+        <option value="8+ years">8+ years</option>
+        <option value="10+ years">10+ years</option>
+        <option value="More than 10 years">More than 10 years</option>
+      </select>
+    </div>
+  </div>
+  
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already registered? <a href="{{ url_for('home') }}">Login here</a></p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* 📘 Professional & Elegant Teacher Login */
+body {
+    background: linear-gradient(to right, #A1C4FD, #C2E9FB); /* Pastel Blue Ombre */
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* 📖 Sophisticated Login Box */
+.login-container {
+    background: linear-gradient(145deg, #E3F2FD, #B3E5FC); /* Soft Sky Blue */
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 350px;
+    margin: auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* 🎓 Bold & Professional Title */
+h2 {
+    color: #003366; /* Dark Blue */
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase; /* LOGIN in CAPS */
+}
+
+/* ✨ Bold Quote (Not Italic) */
+.quote {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+    text-transform: uppercase; /* QUOTE in CAPS */
+}
+
+/* 📜 Neatly Structured Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ✏️ Clean Input Fields */
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #003366; /* Professional Dark Blue */
+    font-size: 16px;
+    background-color: #FFFFFF; /* White */
+}
+
+/* 🖊️ Elegant Submit Button */
+button {
+    background-color: #003366; /* Dark Blue */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase; /* Button text in CAPS */
+    border-radius: 10px;
+    border: none;
+    font-size: 18px; /* Bigger Text */
+    padding: 14px 18px; /* Bigger Button */
+}
+
+/* 💼 Hover Effect */
+button:hover {
+    background-color: #002244;
+    transform: scale(1.1);
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 500px) {
+    .login-container {
+        padding: 20px;
+    }
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

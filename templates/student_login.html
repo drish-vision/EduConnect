@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - EduConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_student.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="login-container">
+        <h2>Student Login</h2>
+        <p class="quote">Education is the most powerful weapon which you can use to change the world.</p>
+
+        <form action="{{ url_for('student_login') }}" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter Full Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter Email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password" required>
+
+            <label for="class">Class (1-10):</label>
+            <select name="class" id="class" required>
+                {% for i in range(1, 11) %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="area">Area:</label>
+            <select name="area" id="area" required>
+                <option value="urban">Urban</option>
+                <option value="rural">Rural</option>
+                <option value="unreserved">Unreserved</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+        
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register Here</a></p>
+    </div>
+</body>
+</html>

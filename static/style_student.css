@@ -1,0 +1,82 @@
+/* 🌈 Kiddish & Fun Student Login */
+body {
+    background: linear-gradient(to right, #FAD0C4, #FFD1FF); /* Pastel Pink to Lavender */
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* 🦄 Fun Container */
+.login-container {
+    background: linear-gradient(145deg, #FFE6E6, #FFD1FF); /* Soft Peach Pink & Lavender */
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 350px;
+    margin: auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* 🎠 Bold & Playful Title */
+h2 {
+    color: #6A0DAD; /* Deep Purple */
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase; /* LOGIN in CAPS */
+}
+
+/* ✨ Bold Quote (Not Italic) */
+.quote {
+    font-weight: bold;
+    color: #555;
+    font-size: 14px;
+    text-transform: uppercase; /* QUOTE in CAPS */
+}
+
+/* 🏫 Fun Form Layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 🦄 Whimsical Input Fields */
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #6A0DAD; /* Purple Borders */
+    font-size: 16px;
+    background-color: #FFF5EE; /* Creamy White */
+}
+
+/* 🎈 Playful Submit Button (BIGGER & BOLDER) */
+button {
+    background-color: #FF69B4; /* Fun Pink */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase; /* Button text in CAPS */
+    border-radius: 10px;
+    border: none;
+    font-size: 18px; /* Bigger Text */
+    padding: 14px 18px; /* Bigger Button */
+}
+
+/* 🪄 Hover Magic */
+button:hover {
+    background-color: #D147A3;
+    transform: scale(1.1); /* Slight Increase on Hover */
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 500px) {
+    .login-container {
+        padding: 20px;
+    }
+    button {
+        font-size: 16px; /* Slightly Smaller for Mobile */
+        padding: 12px;
+    }
+}

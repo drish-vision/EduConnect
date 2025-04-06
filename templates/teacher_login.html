@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login - EduConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_teacher.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Teacher Login</h2>
+        <p class="quote">A good teacher can inspire hope, ignite the imagination, and instill a love of learning.</p>
+
+        <form action="{{ url_for('teacher_login') }}" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter Full Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter Email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password" required>
+
+            <label for="department">Department:</label>
+            <select name="department" id="department" required>
+                <option value="English">English</option>
+                <option value="Maths">Maths</option>
+                <option value="Science">Science</option>
+                <option value="Biology">Biology</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Physics">Physics</option>
+                <option value="Social Studies">Social Studies</option>
+                <option value="Social Skills">Social Skills</option>
+                <option value="Online Education Tips">Online Education Tips</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register Here</a></p>
+    </div>
+</body>
+</html>

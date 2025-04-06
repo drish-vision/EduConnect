@@ -1,0 +1,111 @@
+/* 🍑 Serene & Elegant Registration */
+body {
+    background: linear-gradient(to right, #FFD8B1, #fae7c0); /* Soft Peach Ombre */
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .register-container {
+    max-width: 450px;
+    margin: 50px auto;
+    background: #fffdf9;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  /* 📋 Clean Form Structure */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* ✏️ Neatly Styled Input Fields */
+  input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #8B4513; /* Warm Brown Borders */
+    font-size: 16px;
+    background-color: #FFFFFF;
+    outline: none;
+  }
+  
+  /* 🎯 Elegant & Bigger Submit Button */
+  button {
+    background-color: #8B4513;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+  
+  /* 🌿 Hover Effect */
+  button:hover {
+    background-color: #5A2E0D;
+    transform: scale(1.05);
+  }
+  
+  /* 📱 Mobile Responsive */
+  @media (max-width: 500px) {
+    .register-container {
+      padding: 20px;
+      margin: 20px;
+    }
+    button {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  select,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fffaf0; /* pastel/serene */
+  }
+  body {
+    background-color: #ffe5b4; /* pastel peach */
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .register-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 500px;
+    margin: 50px auto;
+  }
+  

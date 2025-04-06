@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_teacher_dashboard.css') }}">
+</head>
+<body>
+
+    <!-- Sidebar (Hidden by Default) -->
+    <div id="sidebar" class="sidebar">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li>📂 Grades Uploaded</li>
+            <li>📅 Scheduled Meetings</li>
+            <li>🎓 Students Monitoring</li>
+            <li>📄 Assignments Uploading</li>
+            <li><a href="{{ url_for('logout') }}">🚪 Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Header with Welcome Message and Profile -->
+    <div class="header">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <h1>Welcome, {{ name }}</h1>
+        <div class="profile">
+            <img src="default-profile.jpg" alt="Profile Picture">
+            <p>{{ name }}</p>
+        </div>
+    </div>
+
+    <!-- Dashboard Sections -->
+    <div class="dashboard-sections">
+        <div class="section">
+            <h2>📂 Grades Uploaded</h2>
+            <ul>
+                {% for grade in grades %}
+                    <li>{{ grade['student_name'] }} - {{ grade['subject'] }}: {{ grade['score'] }}</li>
+                {% else %}
+                    <li>No grades uploaded yet.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📅 Scheduled Meetings</h2>
+            <ul>
+                {% for meeting in meetings %}
+                    <li>{{ meeting['student_name'] }} - {{ meeting['date_time'] }}</li>
+                {% else %}
+                    <li>No scheduled meetings.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎓 Number of Students Monitoring</h2>
+            <p>{{ student_count }}</p>
+        </div>
+
+        <div class="section">
+            <h2>📄 Assignments Uploading</h2>
+            <form action="{{ url_for('upload_assignment') }}" method="POST">
+                <input type="text" name="title" placeholder="Assignment Title" required>
+                <input type="date" name="due_date" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_student_dashboard.css') }}">
+</head>
+<body>
+
+    <!-- Sidebar (Hidden by Default) -->
+    <div id="sidebar" class="sidebar">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li>📚 Selected Teachers</li>
+            <li>📄 Assignments</li>
+            <li>📆 Scheduled Meetings</li>
+            <li>✅ Test Papers</li>
+            <li>📊 Grades</li>
+            <li>📖 Attendance</li>
+            <li>📚 Study Materials</li>
+            <li>🎯 MCQs/Quizzes</li>
+            <li><a href="{{ url_for('logout') }}">🚪 Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Header with Welcome Message and Profile -->
+    <div class="header">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <h1>Welcome, {{ name }}</h1>
+        <div class="profile">
+            <img src="default-profile.jpg" alt="Profile Picture">
+            <p>{{ name }}</p>
+        </div>
+    </div>
+
+    <!-- Dashboard Sections -->
+    <div class="dashboard-sections">
+        <div class="section">
+            <h2>📄 Assignments Due</h2>
+            <ul>
+                {% for assignment in assignments %}
+                    <li>{{ assignment['title'] }} - Due: {{ assignment['due_date'] }}</li>
+                {% else %}
+                    <li>No assignments due.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📆 Scheduled Meetings</h2>
+            <ul>
+                {% for meeting in meetings %}
+                    <li>{{ meeting['subject'] }} - {{ meeting['date_time'] }}</li>
+                {% else %}
+                    <li>No scheduled meetings.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📖 Attendance</h2>
+            <ul>
+                {% for record in attendance %}
+                    <li>{{ record['subject'] }}: {{ record['percentage'] }}% Attendance</li>
+                {% else %}
+                    <li>No attendance records available.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📚 Study Materials</h2>
+            <ul>
+                {% for material in study_materials %}
+                    <li><a href="{{ material['link'] }}">{{ material['title'] }}</a></li>
+                {% else %}
+                    <li>No study materials available.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

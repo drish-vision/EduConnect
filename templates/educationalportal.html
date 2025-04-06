@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduConnect Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>WELCOME TO EDUCONNECT</h1>
+        <p class="quote">EMPOWERING EDUCATION FOR STUDENTS, EVERYWHERE</p>
+
+        <div class="options">
+            <a href="{{ url_for('student_login') }}"><button class="student-btn">Student Login</button></a>
+            <a href="{{ url_for('teacher_login') }}"><button class="teacher-btn">Teacher Login</button></a>
+        </div>
+
+        <p class="register-link">Haven't registered yet? <a href="{{ url_for('register') }}">Register here</a></p>
+    </div>
+</body>
+</html>
